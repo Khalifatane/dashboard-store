@@ -1,0 +1,33 @@
+{
+  "name": "saleor-monorepo",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Saleor Monorepo - Storefront, Dashboard, and BFF API",
+  "packageManager": "npm@10.0.0",
+  "workspaces": [
+    "apps/*",
+    "packages/*"
+  ],
+  "scripts": {
+    "dev:api": "npm --workspace @repo/api run dev",
+    "dev:dashboard": "npm --workspace @repo/dashboard run dev",
+    "dev:storefront": "npm --workspace apps/storefront run dev",
+    "dev": "npx npm-run-all -p dev:api dev:dashboard dev:storefront",
+    "build": "turbo run build",
+    "lint": "turbo run lint",
+    "test": "turbo run test",
+    "clean": "turbo run clean",
+    "typecheck": "turbo run typecheck",
+    "format": "prettier --write \"**/*.{ts,tsx,js,jsx,json,md}\"",
+    "format:check": "prettier --check \"**/*.{ts,tsx,js,jsx,json,md}\""
+  },
+  "devDependencies": {
+    "@turbo/gen": "^2.0.0",
+    "prettier": "^3.2.0",
+    "turbo": "^2.0.0",
+    "typescript": "^5.4.0"
+  },
+  "engines": {
+    "node": ">=20 <21"
+  }
+}

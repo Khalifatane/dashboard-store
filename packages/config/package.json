@@ -1,0 +1,28 @@
+{
+  "name": "@repo/config",
+  "version": "1.0.0",
+  "private": true,
+  "description": "Shared configuration and environment variables",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
+  "exports": {
+    ".": {
+      "types": "./dist/index.d.ts",
+      "default": "./dist/index.js"
+    },
+    "./env": {
+      "types": "./dist/env.d.ts",
+      "default": "./dist/env.js"
+    }
+  },
+  "scripts": {
+    "build": "tsc",
+    "dev": "tsc --watch",
+    "lint": "eslint src/",
+    "clean": "rm -rf dist"
+  },
+  "devDependencies": {
+    "@types/node": "^20.0.0",
+    "typescript": "^5.4.0"
+  }
+}
